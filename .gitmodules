@@ -1,0 +1,8 @@
+[submodule "crypto_utils"]
+	path = crypto_utils
+	url = athena.dialup.mit.edu:/mit/duncant/Public/crypto_utils.git
+	branch = master
+[submodule "stupid_python_tricks"]
+	path = stupid_python_tricks
+	url = athena.dialup.mit.edu:/mit/duncant/Public/stupid_python_tricks
+	branch = master
