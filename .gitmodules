@@ -6,3 +6,7 @@
 	path = stupid_python_tricks
 	url = athena.dialup.mit.edu:/mit/duncant/Public/stupid_python_tricks
 	branch = master
+[submodule "libzerocoin"]
+	path = libzerocoin
+	url = https://github.com/Zerocoin/libzerocoin.git
+	branch = master
