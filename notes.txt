@@ -1,0 +1,9 @@
+-2*(Q_y/Q_z)*((P_x/P_z)^3+A*(P_x/P_z)^2+(P_x/P_z))*((P_x/P_z)-(Q_x/Q_z))^2/(A+(P_x/P_z)+(Q_x/Q_z)+(R_x/R_z)-((P_x/P_z)-(Q_x/Q_z))^2*((P_x/P_z)^3+A*(P_x/P_z)^2+(P_x/P_z))-((P_x/P_z)-(Q_x/Q_z))^2*(Q_y/Q_z)^2)
+
+-2*Q_y*(P_x^3+A*P_x^2+P_x)*(P_x-Q_x)^2/(A+P_x+Q_x+R_x-(P_x-Q_x)^2*(P_x^3+A*P_x^2+P_x)-(P_x-Q_x)^2*Q_y^2)
+
+
+numerator:
+(2 P_x (P_x^2 + A P_x P_z + P_z^2) Q_y Q_z (-P_z Q_x + P_x Q_z)^2 R_z)
+
+denominator
