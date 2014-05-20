@@ -3,6 +3,7 @@ import os.path
 sys.path.append(os.path.join(os.path.dirname(__file__), "stupid_python_tricks"))
 
 from polynomial import *
+import cPickle as pickle
 
 A = 486662
 #               c  Px Pz Qx Qy Qz Rx Rz
@@ -52,3 +53,24 @@ for term_info in denominator:
     for i, power in enumerate(term_info[1:]):
         term *= Term((vars[i], power))
     d += term
+
+def monitor(*args):
+    print args[0], args[1:]
+
+n_ops = horner_form_tmp(n, None, monitor)
+f = open("sum_verification_polynomial_numerator.pkl","wb")
+p = pickle.Pickler(f, -1)
+p.dump(n_ops)
+del p
+f.flush()
+f.close()
+del f
+
+d_ops = horner_form_tmp(d, None, monitor)
+f = open("sum_verification_polynomial_denominator.pkl","wb")
+p = pickle.Pickler(f, -1)
+p.dump(d_ops)
+del p
+f.flush()
+f.close()
+del f
