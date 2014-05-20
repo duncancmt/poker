@@ -3,6 +3,7 @@ import os.path
 sys.path.append(os.path.join(os.path.dirname(__file__), "stupid_python_tricks"))
 
 from polynomial import *
+from horner import *
 import cPickle as pickle
 
 A = 486662
