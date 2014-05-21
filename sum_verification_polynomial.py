@@ -2,9 +2,11 @@ import sys
 import os.path
 sys.path.append(os.path.join(os.path.dirname(__file__), "stupid_python_tricks"))
 
+import cPickle as pickle
+
 from polynomial import *
 from horner import *
-import cPickle as pickle
+from lru import *
 
 A = 486662
 #               c  Px Pz Qx Qy Qz Rx Rz
@@ -58,7 +60,8 @@ for term_info in denominator:
 def monitor(*args):
     print args[0], args[1:]
 
-n_ops = horner_form_tmp(n, None, monitor)
+memo = LRUDict(maxsize=10000000)
+n_ops = horner_form_tmp(n, None, monitor, memo)
 f = open("sum_verification_polynomial_numerator.pkl","wb")
 p = pickle.Pickler(f, -1)
 p.dump(n_ops)
@@ -67,7 +70,8 @@ f.flush()
 f.close()
 del f
 
-d_ops = horner_form_tmp(d, None, monitor)
+memo = LRUDidct(maxsize=10000000)
+d_ops = horner_form_tmp(d, None, monitor, memo)
 f = open("sum_verification_polynomial_denominator.pkl","wb")
 p = pickle.Pickler(f, -1)
 p.dump(d_ops)
